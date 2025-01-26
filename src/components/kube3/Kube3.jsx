@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Kube1.module.css";
+import styles from "./Kube3.module.css";
 import {useState} from "react";
 
 export default function Cube() {
@@ -15,8 +15,8 @@ export default function Cube() {
                 Explode Cube
             </button>
 
-            <div className={styles.cubeContainer} >
-                <div className={styles.cubeBox} id={styles.cubeBox1}>
+            <div className={styles.cubeContainer}>
+                <div className={styles.cubeBox} id={styles.cubeBox}>
                     <div className={styles.cubeCard} id={styles.front}>Front</div>
                     <div className={styles.cubeCard} id={styles.back}>Back</div>    
                     <div className={styles.cubeCard} id={styles.left}>Left</div>

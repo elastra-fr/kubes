@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Kube1 from '../components/kube1/Kube1';
 import Header from '../components/header/Header'; 
 import Kube2 from '../components/kube2/Kube2';
+import Kube3 from '../components/kube3/Kube3';
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
 
 {currentKube === "Kube 1" && <Kube1 />}
 {currentKube === "Kube 2" && <Kube2 />}
+{currentKube === "Kube 3" && <Kube3 />}
 
 
 

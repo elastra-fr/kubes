@@ -20,11 +20,10 @@
 }
 
 /* Animation for the cube box */
-#cubeBox2 {
-    animation: animate 10s infinite linear;  /* Apply animation with 16s duration, infinite loop, and ease-in-out timing */
+#cubeBox {
+    animation: animate 6s infinite linear;  /* Apply animation with 4s duration, infinite loop, and linear timing */
 }
 
-/* Keyframes for the cube animation */
 @keyframes animate {
     0% {
         transform: rotateX(0deg) rotateY(0deg);  /* Initial state */
@@ -55,6 +54,7 @@
     }
 }
 
+
 /* Card faces of the cube */
 .cubeCard {
     height: 250px;  /* Set height of each face */
@@ -71,7 +71,6 @@
     display: flex;  /* Use flexbox for layout */
     align-items: center;  /* Center children vertically */
     justify-content: center;  /* Center children horizontally */
-    border-radius: 5px;
 }
 
 /* Positioning for each face of the cube */
@@ -80,7 +79,8 @@
 }
 
 #back {
-    transform: translateZ(-125px) rotateY(180deg);  /* Move back face backward and rotate 180 degrees */
+    transform: translateZ(-125px) rotateY(180deg);  /* Move back face backward */
+
 }
 
 #left {
@@ -105,12 +105,12 @@
 
 /* Focus styles for the button to trigger cube transformations */
 #cubeButton:focus ~ .cubeContainer .cubeBox #front {
-    transform: translateZ(180px);  /* Move front face forward */
+    transform: translateZ(180px) rotateY(360deg);  /* Move and rotate front face */
     transition: transform 0.5s ease;  /* Smooth transition */
 }
 
 #cubeButton:focus ~ .cubeContainer .cubeBox #back {
-    transform: translateZ(-180px) rotateY(180deg);  /* Move back face backward and keep it rotated 180 degrees */
+    transform: translateZ(-180px) rotateY(360deg);  /* Move and rotate back face */
     transition: transform 0.5s ease;  /* Smooth transition */
 }
 
