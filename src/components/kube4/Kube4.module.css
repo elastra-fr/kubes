@@ -1,0 +1,131 @@
+/* Container for the cube, centered both horizontally and vertically */
+.cubeContainer {
+   width: 100%;
+    height: 100%;
+    perspective: 1000px;  /* Define the perspective for 3D transformations */
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: column;  /* Arrange children in a column */
+    align-items: center;  /* Center children horizontally */
+    justify-content: center;  /* Center children vertically */
+
+}
+
+/* Box representing the cube, with 3D transformations */
+.cubeBox {
+    height: 250px;  /* Set height of the cube */
+    width: 250px;  /* Set width of the cube */
+    position: relative;  /* Position relative to its container */
+    transform-style: preserve-3d;  /* Preserve 3D transformations for children */
+    transform: rotateY(30deg) rotateX(-3deg) ;  /* Initial rotation */
+}
+
+/* Animation for the cube box */
+#cubeBox2 {
+   /* animation: animate 10s infinite linear;*/  /* Apply animation with 16s duration, infinite loop, and ease-in-out timing */
+}
+
+/* Keyframes for the cube animation */
+@keyframes animate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);  /* Initial state */
+    }
+    12.5% {
+        transform: rotateX(45deg) rotateY(45deg);  /* Rotate 45 degrees on both X and Y axes */
+    }
+    25% {
+        transform: rotateX(90deg) rotateY(90deg);  /* Rotate 90 degrees on both X and Y axes */
+    }
+    37.5% {
+        transform: rotateX(135deg) rotateY(135deg);  /* Rotate 135 degrees on both X and Y axes */
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg);  /* Rotate 180 degrees on both X and Y axes */
+    }
+    62.5% {
+        transform: rotateX(225deg) rotateY(225deg);  /* Rotate 225 degrees on both X and Y axes */
+    }
+    75% {
+        transform: rotateX(270deg) rotateY(270deg);  /* Rotate 270 degrees on both X and Y axes */
+    }
+    87.5% {
+        transform: rotateX(315deg) rotateY(315deg);  /* Rotate 315 degrees on both X and Y axes */
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);  /* Complete full rotation */
+    }
+}
+
+/* Card faces of the cube */
+.cubeCard {
+    height: 250px;  /* Set height of each face */
+    width: 250px;  /* Set width of each face */
+    text-align: center;  /* Center text horizontally */
+    padding: 100px 0;  /* Add padding to center text vertically */
+    color: black;  /* Set text color to white */
+    background-color: white;  /* Set background color to black */
+    border: 1px solid black;
+    font-size: 32px;  /* Set font size */
+    box-sizing: border-box;  /* Include border in element's total width and height */
+    position: absolute;  /* Position absolutely within the cube box */
+    transition: all 1s ease;  /* Smooth transition for all properties */
+    display: flex;  /* Use flexbox for layout */
+    align-items: center;  /* Center children vertically */
+    justify-content: center;  /* Center children horizontally */
+    border-radius: 5px;
+}
+
+/* Positioning for each face of the cube */
+#front {
+    transform: translateZ(125px);  /* Move front face forward */
+}
+
+#back {
+    transform: translateZ(-125px) rotateY(180deg);  /* Move back face backward and rotate 180 degrees */
+}
+
+#left {
+    right: 125px;  /* Position left face to the right */
+    transform: rotateY(-90deg);  /* Rotate left face 90 degrees on Y axis */
+}
+
+#right {
+    left: 125px;  /* Position right face to the left */
+    transform: rotateY(90deg);  /* Rotate right face 90 degrees on Y axis */
+}
+
+#top {
+    bottom: 125px;  /* Position top face at the bottom */
+    transform: rotateX(90deg);  /* Rotate top face 90 degrees on X axis */
+}
+
+#bottom {
+    top: 125px;  /* Position bottom face at the top */
+    transform: rotateX(-90deg);  /* Rotate bottom face -90 degrees on X axis */
+}
+
+/* Focus styles for the button to trigger cube transformations */
+#cubeButton:focus ~ .cubeContainer .cubeBox #front {
+    transform: translateZ(180px);  /* Move front face forward */
+    transition: transform 0.5s ease;  /* Smooth transition */
+}
+
+#cubeButton:focus ~ .cubeContainer .cubeBox #back {
+    transform: translateZ(-180px) rotateY(180deg);  /* Move back face backward and keep it rotated 180 degrees */
+    transition: transform 0.5s ease;  /* Smooth transition */
+}
+
+#cubeButton:focus ~ .cubeContainer .cubeBox #left {
+    right: 180px;  /* Move left face further right */
+}
+
+#cubeButton:focus ~ .cubeContainer .cubeBox #right {
+    left: 180px;  /* Move right face further left */
+}
+
+#cubeButton:focus ~ .cubeContainer .cubeBox #top {
+    bottom: 180px;  /* Move top face further down */
+}
+
+#cubeButton:focus ~ .cubeContainer .cubeBox #bottom {
+    top: 180px;  /* Move bottom face further up */
+}

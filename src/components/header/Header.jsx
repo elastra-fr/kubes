@@ -37,6 +37,7 @@ onChange={handleSelectedKubeChange}
 <option>Kube 1</option>
 <option>Kube 2</option>
 <option>Kube 3</option>
+<option>Kube 4</option>
 
 </select>
 
